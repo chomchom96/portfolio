@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
+import { HiArrowRight } from "react-icons/hi";
 
 const Typewriter = () => {
   const [text, setText] = useState("");
@@ -53,18 +54,31 @@ const Typewriter = () => {
     }
   };
 
+  const scrollToAboutMe = () => {
+    window.scrollTo({ 
+      top: 300, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
+  }
+
   return (
-    <>
+    <div className="relative">
       <h1 className="text-center font-bold text-white text-5xl">
         {text}
-        <span aria-hidden="true"></span>
       </h1>
       {isDone && (
-        <button className="text-white border-white w-fit p-2 m-2 mx-auto mt-10 font-light border-[0.05rem] text-lg" onClick={() => console.log("스크롤 내리기")}>
-          더 알아보기
-        </button>
+        <div className="opacity-0 translate-y-4 transition-all animate-fadeIn group">
+          <button
+            className="absolute left-1/2 transform -translate-x-1/2 text-white border-white w-fit p-2 mx-auto mt-6 font-light border-[0.05rem] text-lg flex flex-row gap-2 items-center group-hover:bg-white group-hover:bg-opacity-10 "
+            onClick={scrollToAboutMe}
+          >
+            더 알아보기{" "}
+            <HiArrowRight className="size-4 block group-hover:rotate-90 duration-300" />
+          </button>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 
