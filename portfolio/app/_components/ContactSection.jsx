@@ -1,76 +1,98 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import emailjs from "@emailjs/browser";
+import { HiChevronRight } from "react-icons/hi";
 
-const ContactSection = () => {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e) => {
+export default function ContactUs() {
+  function sendEmail(e) {
     e.preventDefault();
-    // 이메일 어떻게 보내지
-    console.log("Submitted:", { email, message });
-  };
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        e.currentTarget,
+        {
+          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+        },
+      )
+      .then(
+        (response) => {
+          alert("메일 발송 성공!")
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (err) => {
+          console.error(err)
+        },
+      );
+
+
+    e.target.reset();
+  }
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl overflow-hidden max-w-6xl w-full flex mt-10">
-      <div className="w-full md:w-1/2 p-8 space-y-2">
-        <h2 className="text-3xl font-bold mb-6">Contact</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="email" className="block text-sm text-slate-500">
-              Email
+    <section className="bg-yellow-500">
+      <div className="relative mx-auto my-10 w-2/3 rounded-3xl bg-white py-12 shadow-lg md:w-1/2 px-6 sm:px-12">
+        <div className="mx-auto max-w-md py-6 md:py-0">
+          <h1 className="text-4xl font-bold underline decoration-slate-200 underline-offset-8">
+            Contact
+          </h1>
+          <form onSubmit={sendEmail} className="mt-10 space-y-2 text-lg">
+            <label
+              className="mb-2 text-sm font-bold tracking-wide"
+              htmlFor="name"
+            >
+              이름 <span className="text-red-500">*</span>
             </label>
             <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 p-1 block w-full rounded-md shadow-sm border"
               required
+              id="name"
+              type="text"
+              name="name"
+              placeholder="이름"
             />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-sm text-slate-500">
-              Message
+
+            <label
+              className="mb-2 block text-xs font-bold uppercase tracking-wide text-gray-700"
+              htmlFor="grid-first-name"
+            >
+              이메일 <span className="text-red-500">*</span>
+            </label>
+            <input
+              required
+              id="grid-first-name"
+              type="email"
+              name="email"
+              placeholder="이메일"
+            />
+
+            <label
+              className="mb-2 block text-xs font-bold uppercase tracking-wide text-gray-700"
+              htmlFor="grid-first-name"
+            >
+              메세지 <span className="text-red-500">*</span>
             </label>
             <textarea
-              id="message"
-              rows="4"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="mt-1 p-1 block w-full rounded-md shadow-sm border"
               required
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-[#B78570] text-white py-2 px-4 rounded-md hover:bg-[#815847] transition duration-300"
-          >
-            보내기
-          </button>
-        </form>
-      </div>
-      <div className="hidden md:block w-1/2 bg-[#FFF6EE] p-8">
-        <h2 className="text-3xl font-bold mb-4">Let's Connect!</h2>
-        <p>
-          다양한 사람들과 의견을 교류하며 배우고 협업하는 것을 좋아해요.
-        </p>
-        <p className="text-xs text-slate-500 mb-4">
-            귀여운 고양이 사진 보고 가세요!
-        </p>
-        <div className="relative w-full h-64">
-          <Image
-            src="/cute_cat2.jpg"
-            alt="달콩이"
-            layout="fill"
-            objectFit="contain"
-          />
+              placeholder="메세지를 입력하세요."
+              cols={30}
+              rows={4}
+              name="message"
+            ></textarea>
+
+            <div className="group">
+              <button
+                type="submit"
+                className="mt-4 flex w-full items-center justify-center gap-10 rounded-full bg-black px-4 py-2 font-semibold text-white transition-colors duration-200 hover:bg-yellow-900"
+              >
+                보내기
+                <div className="flex size-6 items-center justify-center rounded-full bg-white duration-200 group-hover:rotate-90">
+                  <HiChevronRight className="size-6 fill-black" />
+                </div>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default ContactSection;
+}

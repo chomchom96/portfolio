@@ -38,7 +38,7 @@ export default function Header() {
   };
 
   const baseButtonClass =
-    "text-white text-base underline-offset-4 p-2 rounded-xl transition-all duration-200 hover:text-white hover:no-underline";
+    "text-white text-lg underline-offset-4 p-2 rounded-xl transition-all duration-200 hover:text-white hover:no-underline";
 
   return (
     <>

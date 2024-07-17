@@ -7,7 +7,7 @@ const Typewriter = () => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(100);
+  const [typingSpeed, setTypingSpeed] = useState(200);
   const [isDone, setIsDone] = useState(false);
 
   const dataText = [
@@ -23,7 +23,7 @@ const Typewriter = () => {
       }, typingSpeed);
 
       if (currentIndex === dataText.length - 1) {
-        setTimeout(() => setIsDone(true), 3000);
+        setTimeout(() => setIsDone(true), 1500);
       }
 
       return () => clearTimeout(timer);
@@ -46,17 +46,17 @@ const Typewriter = () => {
       text === fullText &&
       currentIndex < dataText.length - 1
     ) {
-      setTimeout(() => setIsDeleting(true), 1000);
+      setTimeout(() => setIsDeleting(true), 650);
     } else if (isDeleting && text === "") {
       setIsDeleting(false);
       setCurrentIndex(currentIndex + 1);
-      setTypingSpeed(100);
+      setTypingSpeed(200);
     }
   };
 
   const scrollToAboutMe = () => {
     window.scrollTo({ 
-      top: 300, 
+      top: 800, 
       left: 0, 
       behavior: 'smooth' 
     });
