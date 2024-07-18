@@ -24,7 +24,7 @@ export default function AboutMeSection() {
           </div>
 
           <div className="flex h-[60vh] flex-col justify-between md:w-1/2">
-            <div className="overflow-hidden rounded-lg bg-white bg-opacity-90 p-8 shadow-xl">
+            <div className="overflow-hidden rounded-lg bg-white bg-opacity-90 p-8 shadow-xl z-10">
               <h3 className="mb-4 text-3xl font-semibold text-gray-800">
                 About Me
               </h3>
@@ -35,9 +35,8 @@ export default function AboutMeSection() {
                   시작했습니다.
                 </p>
                 <p>
-                  완성도 있는 코드와 깔끔한 UI를 추구하는 열정적인 개발자입니다.
-                  사용자 중심의 디자인과 효율적인 기능 구현을 통해 최상의 웹
-                  경험을 제공하는 것이 제 목표입니다.
+                  완성도 있는 코드와 깔끔한 UI를 추구합니다.
+                  프론트엔드 실력을 다지며 적재적소에 맞는 기술로 좋은 성능과 훌륭한 UX를 제공하는 개발자가 되고 싶습니다.
                 </p>
               </div>
             </div>

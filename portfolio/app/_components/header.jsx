@@ -62,14 +62,14 @@ export default function Header() {
           Skills
         </button>
         <button
-          className={`${baseButtonClass} ${"hover:bg-indigo-500"}`}
+          className={`${baseButtonClass} ${"hover:bg-slate-600"}`}
           onClick={() => scrollToSection("projects")}
           disabled={activeSection === "projects"}
         >
           Projects
         </button>
         <button
-          className={`${baseButtonClass} ${"hover:bg-orange-600"}`}
+          className={`${baseButtonClass} ${"hover:bg-yellow-500"}`}
           onClick={() => scrollToSection("contact")}
           disabled={activeSection === "contact"}
         >

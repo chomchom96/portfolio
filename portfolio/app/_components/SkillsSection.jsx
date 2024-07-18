@@ -9,9 +9,7 @@ export default function SkillsSection() {
     >
       <div className="relative w-full max-w-6xl px-4">
         <div className="relative z-10">
-          <h2 id="title">
-            Skills
-          </h2>
+          <h2 id="title">Skills</h2>
           <p className="mb-6 flex flex-row items-center justify-center gap-1">
             <HiQuestionMarkCircle /> 마우스롤 올리면 세부사항을 확인할 수
             있습니다.
@@ -56,14 +54,18 @@ export default function SkillsSection() {
                 Web & Styling
               </h3>
               <ul className="flex flex-wrap gap-2 text-lg sm:text-base md:flex-col">
-                <SkillItem title="HTML/CSS" description="" stroke="#c084fc" />
                 <SkillItem
-                  title="Figma"
-                  description="피그마로 간단한 컴포넌트와 페이지를 만들수 있습니다."
+                  title="HTML/CSS"
+                  description="웹 페이지의 구조와 스타일을 정의하는 기본적인 마크업 언어와 스타일 시트 언어를 사용할 수 있습니다."
                   stroke="#c084fc"
                 />
                 <SkillItem
-                  title="Tailwind"
+                  title="Figma"
+                  description="피그마로 간단한 컴포넌트와 페이지를 만들고 interaction을 시각화 할 수 있습니다."
+                  stroke="#c084fc"
+                />
+                <SkillItem
+                  title="TailwindCSS"
                   description="테마, 색상 등을 커스텀하고, breakpoint를 활용한 반응형 UI를 구현할 수 있습니다."
                   stroke="#c084fc"
                 />

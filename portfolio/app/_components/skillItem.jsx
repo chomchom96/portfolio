@@ -27,7 +27,7 @@ export default function SkillItem({ title, description, stroke }) {
       </svg>
       <span>{title}</span>
       {isHovered && description && (
-        <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-white text-black text-xs rounded py-1 px-2 w-48 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-white text-black text-sm rounded py-1 px-2 w-56 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           {description}
         </div>
       )}
