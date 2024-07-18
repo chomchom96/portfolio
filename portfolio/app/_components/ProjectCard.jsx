@@ -35,7 +35,7 @@ export default function ProjectCard({ project, isFlipped, onClick }) {
             <ul>
               {project.techStack.map((tech, index) => (
                 <li
-                  key={index}
+                  key={Math.random() + tech}
                   className="mr-2 mt-1 inline-block rounded-full bg-indigo-100 bg-opacity-60 px-2 py-1 text-sm text-black"
                 >
                   #{tech}
