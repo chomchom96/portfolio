@@ -100,11 +100,11 @@ export const PROJECTS: Project[] = [
     title: "AI Canvas",
     period: "2025.12 – 현재",
     summary:
-      "AI 자동화 플랫폼 AI Canvas의 관리자 대시보드를 개발합니다.",
+      "AI 자동화 플랫폼 AI Canvas의 노드 개발, 편의성 기능 및 배포 전용 대시보드를 개발합니다.",
     bullets: [
-      "Redux-Saga와 Reducer를 조합해 Ctrl+Z/Y 히스토리를 설계했습니다. 단순 액션 되돌리기가 아닌 컴포넌트 종류별, 배치 선택, 실행 결과 등 복합 케이스를 각각 대응하는 스냅샷 구조입니다.",
-      "노드 목록/카테고리 UI를 추가하면서 React.memo와 useRef로 불필요한 리렌더링을 제거했습니다.",
-      "노드 정렬 시 Figma 스타일의 헬퍼라인을 Canvas API로 시각화하고 Redux 상태와 연동해 실시간 업데이트합니다.",
+      "Redux-Saga와 Reducer를 조합해 Ctrl+Z/Y 히스토리를 설계했습니다. 컴포넌트 종류별, 배치 선택, 실행 결과 등 복합 케이스를 각각 대응하는 스냅샷 구조입니다.",
+      "노드 목록/카테고리 UI 추가 및 React.memo, useRef로 불필요한 리렌더링을 제거했습니다.",
+      "노드 정렬 시 Figma 스타일의 헬퍼라인을 Canvas API로 시각화하고 Redux 상태와 실시간 연동합니다.",
     ],
     tags: ["React", "Redux", "Redux-Saga", "styled-components", "Canvas API"],
   },

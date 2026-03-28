@@ -8,7 +8,7 @@ import { LINKS, STAT_CARDS } from "@/app/_lib/constants";
 
 const INTRO_PARAGRAPHS = [
   "수학 문제를 좋아해서 수학과에 갔고,\n알고리즘 풀기가 재밌어서 개발을 시작했습니다.",
-  "현재 AI Canvas의 관리자 대시보드를 개발합니다.\nRedux 상태 설계와 컴포넌트 최적화가 주된 작업입니다.",
+  "AI Canvas의 노드 개발, 편의성 기능과 배포 전용 대시보드를 담당합니다.\nRedux 상태 설계와 컴포넌트 최적화가 주된 작업입니다.",
   "Cursor, Claude 등 AI 툴을 적극 활용합니다.\n도구를 잘 쓰는 것도 실력이라고 생각합니다.",
 ];
 
