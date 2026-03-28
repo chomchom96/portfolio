@@ -4,15 +4,17 @@ import { useState } from 'react';
 
 export default function SkillItem({ title, description, stroke }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <li 
-      className="flex items-center relative group w-fit"
+      className="relative flex w-fit items-center gap-1 group cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => setIsOpen((prev) => !prev)}
     >
       <svg
-        className="w-4 h-4 mr-2 flex-shrink-0"
+        className="mr-1 h-4 w-4 flex-shrink-0"
         fill="none"
         stroke={stroke}
         viewBox="0 0 24 24"
@@ -25,9 +27,9 @@ export default function SkillItem({ title, description, stroke }) {
           d="M5 13l4 4L19 7"
         ></path>
       </svg>
-      <span>{title}</span>
-      {isHovered && description && (
-        <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-white text-black text-sm rounded py-1 px-2 w-56 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      <span className="text-sm sm:text-base">{title}</span>
+      {(description && (isHovered || isOpen)) && (
+        <div className="absolute left-0 top-full z-20 mt-2 w-64 rounded-md bg-white px-3 py-2 text-xs text-black shadow-lg sm:left-full sm:top-1/2 sm:mt-0 sm:ml-2 sm:-translate-y-1/2 sm:text-sm">
           {description}
         </div>
       )}

@@ -1,7 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { HiArrowRight } from "react-icons/hi";
+
+const dataText = [
+  "안녕하세요!",
+  "프론트엔드 개발자",
+  "조용운의 포트폴리오입니다.",
+];
 
 const Typewriter = () => {
   const [text, setText] = useState("");
@@ -10,27 +16,7 @@ const Typewriter = () => {
   const [typingSpeed, setTypingSpeed] = useState(200);
   const [isDone, setIsDone] = useState(false);
 
-  const dataText = [
-    "안녕하세요!",
-    "프론트엔드 개발자",
-    "조용운의 포트폴리오입니다.",
-  ];
-
-  useEffect(() => {
-    if (currentIndex < dataText.length) {
-      let timer = setTimeout(() => {
-        handleType();
-      }, typingSpeed);
-
-      if (currentIndex === dataText.length - 1) {
-        setTimeout(() => setIsDone(true), 1500);
-      }
-
-      return () => clearTimeout(timer);
-    }
-  }, [text, isDeleting, currentIndex, typingSpeed]);
-
-  const handleType = () => {
+  const handleType = useCallback(() => {
     const fullText = dataText[currentIndex];
 
     setText(
@@ -52,15 +38,29 @@ const Typewriter = () => {
       setCurrentIndex(currentIndex + 1);
       setTypingSpeed(200);
     }
-  };
+  }, [text, isDeleting, currentIndex]);
 
-  const scrollToAboutMe = () => {
+  useEffect(() => {
+    if (currentIndex < dataText.length) {
+      let timer = setTimeout(() => {
+        handleType();
+      }, typingSpeed);
+
+      if (currentIndex === dataText.length - 1) {
+        setTimeout(() => setIsDone(true), 1500);
+      }
+
+      return () => clearTimeout(timer);
+    }
+  }, [text, isDeleting, currentIndex, typingSpeed, handleType, dataText.length]);
+
+  const scrollToAboutMe = useCallback(() => {
     window.scrollTo({ 
       top: 800, 
       left: 0, 
       behavior: 'smooth' 
     });
-  }
+  }, []);
 
   return (
     <div className="relative">
