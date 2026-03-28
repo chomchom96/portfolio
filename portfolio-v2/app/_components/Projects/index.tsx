@@ -7,7 +7,7 @@ import { PROJECTS } from "@/app/_lib/constants";
 import type { Project } from "@/app/_lib/types";
 
 const PROJECT_IMAGES: Record<string, string> = {
-  "ai-canvas": "/bg1.jpg",
+  "ai-canvas": "/algorithmlabs.avif",
   target: "/target.jpg",
   mokkoji: "/mokkoji.png",
 };
