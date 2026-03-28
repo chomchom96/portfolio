@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
     title: "AI Canvas",
     period: "2025.12 – 현재",
     summary:
-      "현대/LG/KB금융 등 470개+ 기업이 사용하는 AI 자동화 플랫폼의 캔버스 대시보드를 개발합니다.",
+      "AI 자동화 플랫폼 AI Canvas의 관리자 대시보드를 개발합니다.",
     bullets: [
       "Redux-Saga와 Reducer를 조합해 Ctrl+Z/Y 히스토리를 설계했습니다. 단순 액션 되돌리기가 아닌 컴포넌트 종류별, 배치 선택, 실행 결과 등 복합 케이스를 각각 대응하는 스냅샷 구조입니다.",
       "노드 목록/카테고리 UI를 추가하면서 React.memo와 useRef로 불필요한 리렌더링을 제거했습니다.",
@@ -106,9 +106,9 @@ export const PROJECTS: Project[] = [
 ];
 
 export const STAT_CARDS: StatCard[] = [
-  { value: 470, suffix: "+", label: "기업이 사용하는 서비스" },
-  { value: 3, label: "주요 프로젝트" },
+  { value: 15, suffix: "개월", label: "총 개발 경험" },
   { value: 55, label: "블로그 포스트" },
+  { value: 99, label: "Lighthouse 점수" }, // 배포 후 실측값으로 업데이트
 ];
 
 export const LINKS = {

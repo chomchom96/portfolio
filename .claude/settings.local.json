@@ -7,7 +7,8 @@
       "Bash(npm install:*)",
       "Bash(node -e \"const pkg = require\\(''./package.json''\\); console.log\\(JSON.stringify\\({next: pkg.dependencies.next, tailwindcss: pkg.dependencies.tailwindcss}, null, 2\\)\\)\")",
       "Bash(ls:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(curl -s \"https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/\")"
     ]
   }
 }
