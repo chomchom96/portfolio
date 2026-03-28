@@ -1,14 +1,21 @@
+import Nav from "./_components/Nav";
 import Hero from "./_components/Hero";
 import About from "./_components/About";
+import Skills from "./_components/Skills";
+import Projects from "./_components/Projects";
+import Contact from "./_components/Contact";
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <About />
-      {/* Phase 4: Skills */}
-      {/* Phase 5: Projects */}
-      {/* Phase 6: Contact */}
-    </main>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+    </>
   );
 }
