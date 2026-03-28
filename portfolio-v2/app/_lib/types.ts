@@ -2,7 +2,14 @@ export interface Skill {
   name: string;
   claim: string;
   category: "frontend" | "state" | "styling" | "tools";
-  relatedProject?: string; // project id to scroll to
+  relatedProject?: string;
+}
+
+export interface SkillCategory {
+  id: string;
+  title: string;
+  icon: string; // emoji
+  items: string[];
 }
 
 export interface Project {

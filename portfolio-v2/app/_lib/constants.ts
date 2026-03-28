@@ -1,4 +1,4 @@
-import type { Skill, Project, StatCard } from "./types";
+import type { Skill, SkillCategory, Project, StatCard } from "./types";
 
 export const SKILLS: Skill[] = [
   {
@@ -58,6 +58,39 @@ export const SKILLS: Skill[] = [
     name: "AI 툴 활용",
     claim: "Cursor, Claude 등으로 빠르게 검증하고 완성도를 높입니다.",
     category: "tools",
+  },
+];
+
+export const SKILL_CATEGORIES: SkillCategory[] = [
+  {
+    id: "frontend",
+    title: "Frontend Core",
+    icon: "⚡",
+    items: ["HTML / CSS", "JavaScript (ES6+)", "TypeScript", "반응형 웹 디자인"],
+  },
+  {
+    id: "frameworks",
+    title: "Frameworks",
+    icon: "🧩",
+    items: ["React", "Next.js", "Vue.js", "TailwindCSS"],
+  },
+  {
+    id: "state",
+    title: "State Management",
+    icon: "🔄",
+    items: ["Redux / Redux-Saga", "Zustand", "Pinia"],
+  },
+  {
+    id: "rendering",
+    title: "Canvas & Rendering",
+    icon: "🎨",
+    items: ["Canvas API", "styled-components", "Framer Motion", "SVG 애니메이션"],
+  },
+  {
+    id: "tools",
+    title: "Tools & Workflow",
+    icon: "🛠",
+    items: ["Git / GitHub", "Figma", "Jira", "AI 툴 (Cursor · Claude)"],
   },
 ];
 
