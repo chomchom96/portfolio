@@ -32,8 +32,8 @@ export const SKILLS: Skill[] = [
     relatedProject: "mokkoji",
   },
   {
-    name: "Canvas API",
-    claim: "노드 그래프, 헬퍼라인 등 커스텀 렌더링을 직접 구현합니다.",
+    name: "React Flow",
+    claim: "노드 그래프 기반 UI와 헬퍼라인 등 커스텀 렌더링을 구현합니다.",
     category: "frontend",
     relatedProject: "ai-canvas",
   },
@@ -82,9 +82,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     id: "rendering",
-    title: "Canvas & Rendering",
+    title: "UI & Rendering",
     icon: "🎨",
-    items: ["Canvas API", "styled-components", "Framer Motion", "SVG 애니메이션"],
+    items: ["React Flow", "styled-components", "Framer Motion", "SVG 애니메이션"],
   },
   {
     id: "tools",
@@ -104,9 +104,9 @@ export const PROJECTS: Project[] = [
     bullets: [
       "Redux-Saga와 Reducer를 조합해 Ctrl+Z/Y 히스토리를 설계했습니다. 컴포넌트 종류별, 배치 선택, 실행 결과 등 복합 케이스를 각각 대응하는 스냅샷 구조입니다.",
       "노드 목록/카테고리 UI 추가 및 React.memo, useRef로 불필요한 리렌더링을 제거했습니다.",
-      "노드 정렬 시 Figma 스타일의 헬퍼라인을 Canvas API로 시각화하고 Redux 상태와 실시간 연동합니다.",
+      "노드 정렬 시 Figma 스타일의 헬퍼라인을 React Flow로 시각화하고 Redux 상태와 실시간 연동합니다.",
     ],
-    tags: ["React", "Redux", "Redux-Saga", "styled-components", "Canvas API"],
+    tags: ["React", "Redux", "Redux-Saga", "styled-components", "React Flow"],
   },
   {
     id: "target",

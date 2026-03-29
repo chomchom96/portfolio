@@ -4,12 +4,13 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { PROJECTS } from "@/app/_lib/constants";
+import { asset } from "@/app/_lib/asset";
 import type { Project } from "@/app/_lib/types";
 
 const PROJECT_IMAGES: Record<string, string> = {
-  "ai-canvas": "/algorithmlabs.avif",
-  target: "/target.jpg",
-  mokkoji: "/mokkoji.png",
+  "ai-canvas": asset("/algorithmlabs.avif"),
+  target: asset("/target.jpg"),
+  mokkoji: asset("/mokkoji.png"),
 };
 
 function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -29,7 +30,7 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 }
 
 function ProjectCard({ project, delay }: { project: Project; delay: number }) {
-  const imageSrc = PROJECT_IMAGES[project.id] ?? "/bg1.jpg";
+  const imageSrc = PROJECT_IMAGES[project.id] ?? asset("/bg1.jpg");
 
   return (
     <FadeUp delay={delay}>

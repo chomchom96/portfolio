@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import StatCard from "./StatCard";
-import { LINKS, STAT_CARDS } from "@/app/_lib/constants";
+import { LINKS } from "@/app/_lib/constants";
+import { asset } from "@/app/_lib/asset";
 
 const INTRO_PARAGRAPHS = [
   "수학 문제를 좋아해서 수학과에 갔고,\n알고리즘 풀기가 재밌어서 개발을 시작했습니다.",
@@ -161,7 +161,7 @@ export default function About() {
                 background: "var(--color-bg-elevated)", flexShrink: 0,
               }}>
                 <Image
-                  src="/profile.jpg" alt="조용운 프로필"
+                  src={asset("/profile.jpg")} alt="조용운 프로필"
                   width={112} height={112}
                   style={{ objectFit: "cover", width: "100%", height: "100%" }}
                   quality={90}
@@ -197,13 +197,6 @@ export default function About() {
               </FadeUp>
             ))}
           </div>
-        </div>
-
-        {/* Stat cards */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginTop: "clamp(2.5rem, 6vw, 4rem)" }}>
-          {STAT_CARDS.map((card) => (
-            <StatCard key={card.label} {...card} />
-          ))}
         </div>
 
         {/* Contact cards */}
