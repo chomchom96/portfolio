@@ -10,7 +10,9 @@
       "Bash(npm run:*)",
       "Bash(curl -s \"https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/\")",
       "Bash(cp -r portfolio-v2/app .)",
-      "Bash(cp -r portfolio-v2/public .)"
+      "Bash(cp -r portfolio-v2/public .)",
+      "Bash(git rm:*)",
+      "WebFetch(domain:developers.cloudflare.com)"
     ]
   }
 }
